@@ -9,7 +9,7 @@ export const IPProvider = ({ children }) => {
   const [trackerData, setTrackerData] = useState({});
 
   const fetchData = async (ipAddress) => {
-    const response = await axios.get(`${API_URL}&ipAddress=${ipAddress}`);
+    const response = await axios.get(`${API_URL}&domain=${ipAddress}`);
 
     setTrackerData(response.data);
   };
