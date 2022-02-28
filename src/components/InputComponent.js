@@ -52,7 +52,7 @@ const InputComponent = () => {
             ref={inputRef}
             placeholder={
               !error
-                ? "Search for any IP address"
+                ? "Search for any IP address or domain"
                 : "Enter valid IPv4 or IPv6 address"
             }
           />
