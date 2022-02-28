@@ -1,13 +1,197 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --color-very-dark-gray: hsl(0, 0%, 17%);
+  --color-dark-gray: hsl(0, 0%, 59%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-red: hsl(0, 87%, 67%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Input Container */
+.input-container {
+  background: url("./assets/pattern-bg.png") no-repeat;
+  position: relative;
+  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-container h1 {
+  font-size: 3rem;
+  color: var(--color-white);
+  font-weight: normal;
+}
+
+.input-container .form-input {
+  padding: 3rem 0rem 10rem 0rem;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-container .form-input input {
+  border: none;
+  /* border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem; */
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+}
+
+.input-container .form-input input.error {
+  outline: 2px solid var(--color-red);
+}
+.input-container .form-input input.error::placeholder {
+  color: var(--color-red);
+  filter: opacity(70%);
+}
+
+.input-container .form-input input:focus {
+  outline: 0;
+}
+
+.input-container .form-input button {
+  position: absolute;
+  right: 0;
+  border: none;
+  padding: 1.7rem 2rem;
+  cursor: pointer;
+  background-color: var(--color-black);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.input-container .form-input button:hover {
+  background-color: var(--color-very-dark-gray);
+}
+
+/* Display Container */
+.display-container {
+  position: absolute;
+  top: 25rem;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+}
+
+.display-container .display-text {
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.line {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 0.05rem;
+  filter: opacity(50%);
+  height: 12vh;
+  background-color: var(--color-dark-gray);
+}
+.display-container .display-text .input-holder span {
+  display: inline-block;
+  font-size: x-small;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--color-dark-gray);
+}
+
+.display-container .display-text .input-holder h5 {
+  color: var(--color-very-dark-gray);
+  font-size: large;
+  margin: 1rem 0rem;
+}
+
+.leaflet-container {
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+}
+
+@media screen and (max-width: 768px) {
+  .input-container .form-input {
+    width: 90%;
+  }
+
+  .display-container {
+    width: 90%;
+    top: 32rem;
+  }
+
+  .display-container .display-text {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .line {
+    display: none;
+  }
 }
